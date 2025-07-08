@@ -99,10 +99,10 @@ async def predict(file: UploadFile = File(...)):
         # Transcode video
         transcoded_name = f"transcoded_{detected_video.stem}.mp4"
         transcoded_path = frontend_public_dir / transcoded_name
-        ffmpeg_path = "C:/ffmpeg/bin/ffmpeg.exe"  # Ganti sesuai path FFmpeg kamu
+
 
         ffmpeg_cmd = [
-            ffmpeg_path,
+            "ffmpeg",
             "-i", str(detected_video),
             "-c:v", "libx264",
             "-preset", "fast",
